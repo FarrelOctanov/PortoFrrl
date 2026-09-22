@@ -1,0 +1,9 @@
+# Netlify headers untuk hosting statis. Diterapkan saat deploy, bukan lokal.
+# SENGAJA tanpa Content-Security-Policy: CSP membutuhkan verifikasi deploy
+# karena inline theme script + Google Fonts + dev.to + Formspree. Jangan
+# tambahkan CSP sebelum diuji di deployment asli.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-Frame-Options: DENY

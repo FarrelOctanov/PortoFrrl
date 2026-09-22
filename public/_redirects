@@ -1,0 +1,7 @@
+# One-page migration: rute multi-page lama -> section anchor yang setara.
+# Untuk hosting statis (Netlify dkk). Pada preset node-server, redirect
+# yang sama ditangani routeRules di nuxt.config.ts.
+/about /#about 301
+/contact /#contact 301
+/skills /#projects 301
+/projects /#projects 301

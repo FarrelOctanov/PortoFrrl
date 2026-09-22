@@ -1,0 +1,6 @@
+{
+  // Jangan override `include`/`exclude`: base .nuxt/tsconfig.json sudah
+  // mencakup ../**/* + ./nuxt.d.ts (auto-imports, defineNuxtConfig,
+  // import.meta.client, asset *.webp). Override memutus semua itu.
+  "extends": "./.nuxt/tsconfig.json"
+}

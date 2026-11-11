@@ -27,6 +27,7 @@
   --neu-pressed: inset 2px 2px 5px rgba(15, 23, 42, 0.08), inset -2px -2px 5px rgba(255, 255, 255, 0.8);
   --neu-btn: 3px 3px 10px rgba(15, 23, 42, 0.06), -2px -2px 8px rgba(255, 255, 255, 0.9);
   --neu-btn-primary: 0 4px 14px rgba(2, 132, 199, 0.35);
+  --neu-btn-primary-hover: 0 6px 20px rgba(2, 132, 199, 0.4);
 
   --radius: 0.75rem;
   --header-h: 68px;
@@ -51,6 +52,7 @@
   --neu-pressed: inset 2px 2px 5px rgba(0, 0, 0, 0.6), inset -1px -1px 3px rgba(255, 255, 255, 0.03);
   --neu-btn: 3px 4px 12px rgba(0, 0, 0, 0.45), -1px -1px 6px rgba(255, 255, 255, 0.02);
   --neu-btn-primary: 0 4px 16px rgba(56, 189, 248, 0.3);
+  --neu-btn-primary-hover: 0 6px 24px rgba(56, 189, 248, 0.42);
 }
 
 @media (min-width: 1024px) {

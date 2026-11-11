@@ -1,7 +1,9 @@
 <template>
   <div class="min-h-screen bg-bg text-fg">
+    <!-- Skip to main content: visible on keyboard focus, hidden otherwise. -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <AppHeader />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <footer class="border-t">
@@ -21,5 +23,25 @@ const year = new Date().getFullYear()
 footer {
   border-color: var(--border);
   background-color: var(--card);
+}
+
+/* Skip link: sr-only until focused by keyboard. */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-fg);
+  background: var(--primary);
+  border-radius: 0 0 0.5rem 0.5rem;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 </style>

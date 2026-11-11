@@ -16,8 +16,8 @@ export function useTheme() {
   const apply = (value: ThemeMode) => {
     if (!import.meta.client) return
     const dark = value === 'dark'
+    // Tailwind darkMode: 'class' watches <html> only — body toggle is not needed.
     document.documentElement.classList.toggle('dark', dark)
-    document.body.classList.toggle('dark', dark)
   }
 
   const init = () => {

@@ -84,7 +84,6 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      formspreeId: 'mvodbwva',
       // Base URL produksi untuk canonical/OG/sitemap fallback.
       // Default kosong agar tidak mengklaim domain template atau fiktif.
       // Isi via NUXT_PUBLIC_SITE_URL saat build/deploy.

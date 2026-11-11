@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <div>
     <section id="home" aria-label="Home">
       <HomeSection />
     </section>
@@ -18,7 +18,7 @@
         <ContactSection />
       </div>
     </section>
-  </main>
+  </div>
 </template>
 
 <script setup lang="ts">

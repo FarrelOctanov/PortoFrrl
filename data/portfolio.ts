@@ -1,4 +1,6 @@
+import gisMapImg from '~/assets/gis-map.svg'
 import mlImg from '~/assets/ml.jpg'
+import owallaPosImg from '~/assets/owalla-pos-thumbnail.svg'
 import psImg from '~/assets/ps.png'
 
 export interface Education {
@@ -13,6 +15,8 @@ export interface Project {
   image?: string
   imageAlt?: string
   technologies: string[]
+  category?: string
+  location?: string
 }
 
 export interface Experience {
@@ -27,12 +31,33 @@ export const profile = {
   role: 'Mahasiswa Teknik Informatika',
   focus: 'Pengembangan Web • Multimedia • Machine Learning • Microsoft Office',
   location: 'Jember, Indonesia',
+  birthInfo: 'Jember, 16 Oktober 2003',
   school: 'Universitas Muhammadiyah Jember',
   major: 'S1 Teknik Informatika'
 }
 
+/**
+ * Konversi string ke decimal HTML character entities untuk perlindungan terhadap scraper sederhana.
+ * Contoh: 'a@b.com' -> '&#97;&#64;&#98;&#46;&#99;&#111;&#109;'
+ * Browser me-render normal, pengguna tetap dapat membaca dan menyalin (copy),
+ * tetapi scraper berbasis regex teks biasa tidak menemukan karakter '@' langsung.
+ */
+export const toHtmlEntities = (str: string): string =>
+  str.split('').map((c) => `&#${c.charCodeAt(0)};`).join('')
+
+/**
+ * Mailto link berstandar RFC 6068 dengan percent-encoding pada karakter '@' (%40).
+ * Menghilangkan karakter '@' mentah dari atribut HTML tanpa merusak fungsi mailto native.
+ */
+export const toMailtoHref = (email: string): string =>
+  `mailto:${email.replace('@', '%40')}`
+
+const emailAddress = 'foctamov@gmail.com'
+
 export const contact = {
-  email: 'foctamov@gmail.com',
+  email: emailAddress,
+  emailHtml: toHtmlEntities(emailAddress),
+  emailHref: toMailtoHref(emailAddress),
   emailSubject: 'Kontak dari Portfolio',
   whatsappNumber: '6282232425084',
   whatsappDisplay: '082232425084',
@@ -45,7 +70,7 @@ export const education: Education[] = [
   {
     school: 'Universitas Muhammadiyah Jember',
     major: 'S1 Teknik Informatika',
-    period: '2022 – Sekarang'
+    period: 'September 2022 – Oktober 2026'
   },
   {
     school: 'SMK Negeri 1 Jember',
@@ -56,6 +81,21 @@ export const education: Education[] = [
 
 export const projects: Project[] = [
   {
+    title: 'Perancangan Peta Administrasi Desa Sumberejo',
+    category: 'Geographic Information System / Digital Mapping',
+    location: 'Desa Sumberejo, Kecamatan Ambulu, Kabupaten Jember, Jawa Timur',
+    description:
+      'Perancangan peta administrasi Desa Sumberejo menggunakan Quantum GIS (QGIS) untuk menyajikan informasi batas wilayah dan pembagian administrasi desa dalam bentuk visual spasial yang informatif. Project ini berfokus pada pengolahan data geospasial, penyusunan batas administrasi, serta visualisasi informasi wilayah guna mendukung kebutuhan dokumentasi dan pemetaan desa.',
+    image: gisMapImg,
+    imageAlt: 'Peta Administrasi Desa Sumberejo hasil perancangan Quantum GIS',
+    technologies: [
+      'Quantum GIS (QGIS)',
+      'Geographic Information System (GIS)',
+      'Spatial Data Processing',
+      'Cartographic Visualization'
+    ]
+  },
+  {
     title: 'Machine Learning',
     description:
       'Project machine learning yang berfokus pada klasifikasi data, mencakup preprocessing data, TF-IDF, pembagian dataset, Random Oversampling, Multinomial Naive Bayes, dan evaluasi model.',
@@ -65,8 +105,12 @@ export const projects: Project[] = [
   },
   {
     title: 'Sistem Kasir dan Stok Barang Laravel',
+    category: 'Web Application & POS',
+    location: 'OWALLA.ID',
     description:
       'Pengembangan sistem kasir dan pengelolaan stok barang berbasis Laravel.',
+    image: owallaPosImg,
+    imageAlt: 'Ilustrasi sistem kasir POS dan manajemen stok barang OWALLA.ID',
     technologies: ['Laravel', 'PHP', 'MySQL', 'Web System']
   },
   {

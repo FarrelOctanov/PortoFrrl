@@ -1,20 +1,14 @@
 <template>
   <header class="topnav">
     <div class="topnav-inner">
-      <NuxtLink to="/#home" class="brand" aria-label="Homepage" @click="onBrandClick">Frrl.</NuxtLink>
-      <button
-        type="button"
-        class="menu-btn"
-        aria-controls="primary-navigation"
-        :aria-expanded="menuOpen ? 'true' : 'false'"
-        :aria-label="menuOpen ? 'Close menu' : 'Open menu'"
-        @click="toggleMenu"
-      >
-        <span aria-hidden="true">{{ menuOpen ? '✕' : '☰' }}</span>
-      </button>
+      <NuxtLink to="/#home" class="brand" aria-label="Beranda Farrel Octanov" @click="onBrandClick">
+        Frrl.
+      </NuxtLink>
+
+      <!-- Navigasi Utama: Desktop tampil langsung horizontal, Mobile tampil via drawer toggle -->
       <nav
         id="primary-navigation"
-        aria-label="Primary"
+        aria-label="Navigasi Utama"
         class="topnav-nav"
         :class="menuOpen ? 'topnav-nav-open' : 'topnav-nav-closed'"
       >
@@ -24,26 +18,51 @@
           :to="link.to"
           class="navlink"
           :class="active === link.id ? 'nav-active' : ''"
-          :aria-current="active === link.id ? 'true' : undefined"
+          :aria-current="active === link.id ? 'page' : undefined"
           @click="(e: Event) => onNavClick(e, link.id)"
         >
           {{ link.label }}
         </NuxtLink>
       </nav>
-      <button
-        type="button"
-        class="icon-btn"
-        :aria-label="mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
-        :title="mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
-        @click="toggle"
-      >
-        <span aria-hidden="true">{{ mode === 'dark' ? '☀️' : '🌙' }}</span>
-      </button>
+
+      <!-- Tombol Aksi: Theme Switcher & Menu Hamburger (Khusus Mobile) -->
+      <div class="topnav-actions flex items-center gap-2">
+        <button
+          type="button"
+          class="icon-btn inline-flex items-center justify-center"
+          :aria-label="mode === 'dark' ? 'Ganti ke mode terang' : 'Ganti ke mode gelap'"
+          :title="mode === 'dark' ? 'Ganti ke mode terang' : 'Ganti ke mode gelap'"
+          @click="toggle"
+        >
+          <Sun v-if="mode === 'dark'" :size="18" aria-hidden="true" />
+          <Moon v-else :size="18" aria-hidden="true" />
+        </button>
+
+        <button
+          type="button"
+          class="menu-btn inline-flex md:hidden items-center justify-center"
+          aria-controls="primary-navigation"
+          :aria-expanded="menuOpen ? 'true' : 'false'"
+          :aria-label="menuOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi'"
+          @click="toggleMenu"
+        >
+          <X v-if="menuOpen" :size="20" aria-hidden="true" />
+          <Menu v-else :size="20" aria-hidden="true" />
+        </button>
+      </div>
     </div>
+    <!-- Subtle Reading Progress Indicator -->
+    <div
+      class="scroll-progress-bar"
+      :style="{ transform: `scaleX(${progress})` }"
+      aria-hidden="true"
+    />
   </header>
 </template>
 
 <script setup lang="ts">
+import { Menu, Moon, Sun, X } from 'lucide-vue-next'
+
 interface NavLink {
   id: string
   label: string
@@ -61,6 +80,7 @@ const links: NavLink[] = [
 const { mode, toggle } = useTheme()
 const route = useRoute()
 const { active } = useActiveSection(links.map((l) => l.id))
+const { progress } = useScrollProgress()
 
 const menuOpen = ref(false)
 
@@ -121,11 +141,35 @@ const onKeydown = (e: KeyboardEvent) => {
   if (e.key === 'Escape') menuOpen.value = false
 }
 
+// Menutup menu mobile saat jendela di-resize ke ukuran desktop (>= 768px).
+const onResize = () => {
+  if (typeof window !== 'undefined' && window.innerWidth >= 768 && menuOpen.value) {
+    menuOpen.value = false
+  }
+}
+
 onMounted(() => {
   window.addEventListener('keydown', onKeydown)
+  window.addEventListener('resize', onResize)
 })
 
 onUnmounted(() => {
   window.removeEventListener('keydown', onKeydown)
+  window.removeEventListener('resize', onResize)
 })
 </script>
+
+<style scoped>
+.scroll-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent) 0%, #38bdf8 100%);
+  transform-origin: left;
+  will-change: transform;
+  pointer-events: none;
+  z-index: 30;
+}
+</style>

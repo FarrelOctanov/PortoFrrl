@@ -1,5 +1,19 @@
 <template>
-  <div ref="el" class="reveal" :class="{ 'is-visible': visible }" :style="style">
+  <div
+    v-if="clampedDelay > 0"
+    ref="el"
+    class="reveal"
+    :class="{ 'is-visible': visible }"
+    :style="{ transitionDelay: `${clampedDelay}ms` }"
+  >
+    <slot />
+  </div>
+  <div
+    v-else
+    ref="el"
+    class="reveal"
+    :class="{ 'is-visible': visible }"
+  >
     <slot />
   </div>
 </template>
@@ -20,13 +34,19 @@ const visible = ref(true)
 let observer: IntersectionObserver | null = null
 
 const clampedDelay = computed(() => Math.min(250, Math.max(0, props.delay)))
-const style = computed(() => (clampedDelay.value > 0 ? { transitionDelay: `${clampedDelay.value}ms` } : undefined))
 
 onMounted(() => {
   // Reduced motion / tanpa IO: tetap terlihat, tanpa animasi.
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
   if (!('IntersectionObserver' in window)) return
-  // Persenjatai efek: sembunyikan, lalu reveal saat masuk viewport.
+
+  // Fix FOIC: jika elemen sudah ada di viewport saat mount (mis. Hero section),
+  // jangan sembunyikan — langsung biarkan visible=true tanpa animasi.
+  // Hanya sembunyikan elemen yang memang berada di luar viewport saat halaman dimuat.
+  const rect = el.value?.getBoundingClientRect()
+  const alreadyInView = rect && rect.top < window.innerHeight && rect.bottom > 0
+  if (alreadyInView) return
+
   visible.value = false
   observer = new IntersectionObserver(
     (entries) => {

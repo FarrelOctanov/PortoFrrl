@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p v-if="eyebrow" class="text-xs md:text-sm font-bold uppercase tracking-widest text-accent mb-1.5">
+    <p v-if="eyebrow" class="text-xs md:text-sm font-semibold tracking-wide text-accent mb-1">
       {{ eyebrow }}
     </p>
     <component :is="tag">

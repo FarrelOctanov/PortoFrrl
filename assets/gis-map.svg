@@ -10,16 +10,16 @@
       <stop offset="100%" stop-color="#021c38" stop-opacity="0.98" />
     </linearGradient>
     <linearGradient id="poly-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.10" />
+      <stop offset="0%" stop-color="#2196F3" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#90CAF9" stop-opacity="0.10" />
     </linearGradient>
     <linearGradient id="poly-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.30" />
-      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.12" />
+      <stop offset="0%" stop-color="#90CAF9" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#0D47A1" stop-opacity="0.12" />
     </linearGradient>
     <linearGradient id="poly-grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.22" />
-      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.08" />
+      <stop offset="0%" stop-color="#2196F3" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#0D47A1" stop-opacity="0.08" />
     </linearGradient>
     <filter id="gis-glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="6" result="blur" />
@@ -32,23 +32,23 @@
   <rect width="800" height="450" fill="url(#gis-grid)" />
 
   <!-- Topographic Contour Curves -->
-  <path d="M-20 180 C 120 120, 240 220, 380 160 C 520 100, 680 180, 820 130" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.15" fill="none" />
-  <path d="M-20 240 C 140 180, 260 280, 420 220 C 580 160, 700 240, 820 190" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.12" fill="none" />
-  <path d="M-20 300 C 160 240, 300 340, 460 270 C 620 200, 720 300, 820 250" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.08" fill="none" />
-  <path d="M-20 360 C 180 300, 320 400, 500 330 C 660 260, 740 350, 820 310" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.06" fill="none" />
+  <path d="M-20 180 C 120 120, 240 220, 380 160 C 520 100, 680 180, 820 130" stroke="#90CAF9" stroke-width="1" stroke-opacity="0.15" fill="none" />
+  <path d="M-20 240 C 140 180, 260 280, 420 220 C 580 160, 700 240, 820 190" stroke="#90CAF9" stroke-width="1" stroke-opacity="0.12" fill="none" />
+  <path d="M-20 300 C 160 240, 300 340, 460 270 C 620 200, 720 300, 820 250" stroke="#90CAF9" stroke-width="1" stroke-opacity="0.08" fill="none" />
+  <path d="M-20 360 C 180 300, 320 400, 500 330 C 660 260, 740 350, 820 310" stroke="#90CAF9" stroke-width="1" stroke-opacity="0.06" fill="none" />
 
   <!-- Administrative Polygons: Dusun/Wilayah Desa Sumberejo -->
   <!-- Dusun Krajan / Sektor 1 -->
-  <polygon points="160,110 320,80 390,170 340,280 210,260 140,190" fill="url(#poly-grad-1)" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6 3" />
+  <polygon points="160,110 320,80 390,170 340,280 210,260 140,190" fill="url(#poly-grad-1)" stroke="#90CAF9" stroke-width="1.8" stroke-dasharray="6 3" />
   <!-- Dusun Sumberejo Timur / Sektor 2 -->
-  <polygon points="320,80 520,70 590,180 500,270 390,170" fill="url(#poly-grad-2)" stroke="#38bdf8" stroke-width="2" />
+  <polygon points="320,80 520,70 590,180 500,270 390,170" fill="url(#poly-grad-2)" stroke="#90CAF9" stroke-width="2" />
   <!-- Dusun Sumberan / Sektor 3 -->
-  <polygon points="390,170 500,270 470,370 310,380 340,280" fill="url(#poly-grad-3)" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6 3" />
+  <polygon points="390,170 500,270 470,370 310,380 340,280" fill="url(#poly-grad-3)" stroke="#90CAF9" stroke-width="1.8" stroke-dasharray="6 3" />
   <!-- Dusun Curah Rejo / Sektor 4 -->
-  <polygon points="210,260 340,280 310,380 170,360 140,290" fill="url(#poly-grad-1)" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 2" />
+  <polygon points="210,260 340,280 310,380 170,360 140,290" fill="url(#poly-grad-1)" stroke="#90CAF9" stroke-width="1.5" stroke-dasharray="4 2" />
 
   <!-- Outer Administrative Border (Batas Desa Sumberejo) with Subtle Glow -->
-  <polygon points="160,110 320,80 520,70 590,180 500,270 470,370 310,380 170,360 140,290 140,190" fill="none" stroke="#38bdf8" stroke-width="3" filter="url(#gis-glow)" stroke-opacity="0.9" />
+  <polygon points="160,110 320,80 520,70 590,180 500,270 470,370 310,380 170,360 140,290 140,190" fill="none" stroke="#90CAF9" stroke-width="3" filter="url(#gis-glow)" stroke-opacity="0.9" />
 
   <!-- Road / Primary Transport Network (Jalan Utama) -->
   <path d="M 120 70 Q 280 140 370 190 T 560 240 T 700 290" stroke="#f8fafc" stroke-width="2.5" stroke-opacity="0.75" fill="none" stroke-linecap="round" />
@@ -56,42 +56,42 @@
   <path d="M 240 50 Q 280 140 210 260 T 160 410" stroke="#94a3b8" stroke-width="1.5" stroke-opacity="0.5" fill="none" stroke-linecap="round" />
 
   <!-- River / Drainage Line (Aliran Sungai) -->
-  <path d="M 580 40 Q 550 140 510 230 T 460 350 T 430 430" stroke="#0284c7" stroke-width="2.5" stroke-opacity="0.8" fill="none" />
+  <path d="M 580 40 Q 550 140 510 230 T 460 350 T 430 430" stroke="#2196F3" stroke-width="2.5" stroke-opacity="0.8" fill="none" />
 
   <!-- GIS Coordinate Markers & POIs -->
   <!-- Balai Desa Sumberejo -->
   <g transform="translate(370, 190)">
-    <circle r="14" fill="#38bdf8" fill-opacity="0.25">
+    <circle r="14" fill="#90CAF9" fill-opacity="0.25">
       <animate attributeName="r" values="10;18;10" dur="3s" repeatCount="indefinite" />
       <animate attributeName="fill-opacity" values="0.3;0.05;0.3" dur="3s" repeatCount="indefinite" />
     </circle>
-    <circle r="5" fill="#f8fafc" stroke="#0284c7" stroke-width="2" />
-    <rect x="12" y="-12" width="130" height="24" rx="4" fill="#0f172a" fill-opacity="0.88" stroke="#38bdf8" stroke-width="1" />
+    <circle r="5" fill="#f8fafc" stroke="#2196F3" stroke-width="2" />
+    <rect x="12" y="-12" width="130" height="24" rx="4" fill="#0f172a" fill-opacity="0.88" stroke="#90CAF9" stroke-width="1" />
     <text x="20" y="4" fill="#f8fafc" font-size="10" font-family="'Quicksand', sans-serif" font-weight="700">Kantor Balai Desa</text>
   </g>
 
   <!-- Dusun Markers -->
   <g transform="translate(250, 170)">
-    <circle r="3.5" fill="#38bdf8" />
+    <circle r="3.5" fill="#90CAF9" />
     <text x="8" y="4" fill="#cbd5e1" font-size="9" font-family="'Quicksand', sans-serif" font-weight="600">Dsn. Krajan</text>
   </g>
   <g transform="translate(480, 150)">
-    <circle r="3.5" fill="#38bdf8" />
+    <circle r="3.5" fill="#90CAF9" />
     <text x="8" y="4" fill="#cbd5e1" font-size="9" font-family="'Quicksand', sans-serif" font-weight="600">Dsn. Sumberejo Tmr</text>
   </g>
   <g transform="translate(400, 310)">
-    <circle r="3.5" fill="#38bdf8" />
+    <circle r="3.5" fill="#90CAF9" />
     <text x="8" y="4" fill="#cbd5e1" font-size="9" font-family="'Quicksand', sans-serif" font-weight="600">Dsn. Sumberan</text>
   </g>
   <g transform="translate(230, 320)">
-    <circle r="3.5" fill="#38bdf8" />
+    <circle r="3.5" fill="#90CAF9" />
     <text x="8" y="4" fill="#cbd5e1" font-size="9" font-family="'Quicksand', sans-serif" font-weight="600">Dsn. Curah Rejo</text>
   </g>
 
   <!-- Cartographic Metadata Overlay (Header Badge) -->
   <g transform="translate(24, 24)">
     <rect width="260" height="66" rx="8" fill="#0b0f19" fill-opacity="0.92" stroke="#1e293b" stroke-width="1.2" />
-    <text x="14" y="22" fill="#38bdf8" font-size="10" font-family="'Quicksand', sans-serif" font-weight="800" letter-spacing="1.5">PETA ADMINISTRASI DESA</text>
+    <text x="14" y="22" fill="#90CAF9" font-size="10" font-family="'Quicksand', sans-serif" font-weight="800" letter-spacing="1.5">PETA ADMINISTRASI DESA</text>
     <text x="14" y="42" fill="#f8fafc" font-size="14" font-family="'Quicksand', sans-serif" font-weight="700">DESA SUMBEREJO</text>
     <text x="14" y="56" fill="#94a3b8" font-size="9.5" font-family="'Quicksand', sans-serif">Kec. Ambulu • Kab. Jember • QGIS</text>
   </g>
@@ -100,13 +100,13 @@
   <g transform="translate(730, 70)">
     <circle r="26" fill="#0b0f19" fill-opacity="0.9" stroke="#1e293b" stroke-width="1.2" />
     <!-- North arrow -->
-    <polygon points="0,-18 5,0 0,-4 -5,0" fill="#38bdf8" />
+    <polygon points="0,-18 5,0 0,-4 -5,0" fill="#90CAF9" />
     <!-- South arrow -->
     <polygon points="0,18 5,0 0,4 -5,0" fill="#64748b" />
     <!-- East / West -->
     <polygon points="18,0 0,5 4,0 0,-5" fill="#64748b" />
     <polygon points="-18,0 0,5 -4,0 0,-5" fill="#64748b" />
-    <text x="0" y="-21" text-anchor="middle" fill="#38bdf8" font-size="9" font-family="'Quicksand', sans-serif" font-weight="800">U</text>
+    <text x="0" y="-21" text-anchor="middle" fill="#90CAF9" font-size="9" font-family="'Quicksand', sans-serif" font-weight="800">U</text>
   </g>
 
   <!-- Coordinate Graticules (Tepi Peta) -->
@@ -123,9 +123,9 @@
   <g transform="translate(560, 370)">
     <rect width="216" height="56" rx="6" fill="#0b0f19" fill-opacity="0.92" stroke="#1e293b" stroke-width="1" />
     <!-- Scale bar -->
-    <rect x="14" y="16" width="40" height="4" fill="#38bdf8" />
+    <rect x="14" y="16" width="40" height="4" fill="#90CAF9" />
     <rect x="54" y="16" width="40" height="4" fill="#f8fafc" />
-    <rect x="94" y="16" width="40" height="4" fill="#38bdf8" />
+    <rect x="94" y="16" width="40" height="4" fill="#90CAF9" />
     <text x="14" y="30" fill="#94a3b8" font-size="8" font-family="'Quicksand', sans-serif">0</text>
     <text x="94" y="30" fill="#94a3b8" font-size="8" font-family="'Quicksand', sans-serif">1 km</text>
     <text x="134" y="30" fill="#94a3b8" font-size="8" font-family="'Quicksand', sans-serif">2 km</text>

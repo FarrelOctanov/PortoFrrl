@@ -44,7 +44,7 @@
 
         <!-- Category & Location Eyebrow -->
         <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-          <span class="text-xs font-bold uppercase tracking-wider text-accent">
+          <span class="text-xs font-semibold text-accent">
             {{ project.category || 'Software Project' }}
           </span>
           <span v-if="project.location" class="inline-flex items-center text-xs font-medium text-muted">
@@ -70,7 +70,7 @@
           <span
             v-for="tech in project.technologies"
             :key="tech"
-            class="tag transition-all duration-150 hover:border-accent/40 hover:text-accent hover:bg-accent/5"
+            class="tag transition-all duration-150 hover:border-accent/40 hover:text-accent hover:bg-[var(--surface-highlight)]"
           >
             {{ tech }}
           </span>
@@ -134,22 +134,21 @@ const { el, tiltStyle } = useTilt({ maxTilt: 4, perspective: 1000 })
 .media-category-pill {
   display: inline-block;
   padding: 0.25rem 0.65rem;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   color: #f8fafc;
   background: rgba(15, 23, 42, 0.78);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 9999px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .dark .media-category-pill {
   background: rgba(11, 15, 25, 0.82);
-  border-color: rgba(56, 189, 248, 0.25);
+  border-color: color-mix(in srgb, var(--accent) 25%, transparent);
 }
 
 /* Typographic placeholder fallback */
@@ -164,11 +163,10 @@ const { el, tiltStyle } = useTilt({ maxTilt: 4, perspective: 1000 })
 
 .project-placeholder-eyebrow {
   display: block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(248, 250, 252, 0.45);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgba(248, 250, 252, 0.6);
   margin-bottom: 0.4rem;
 }
 
@@ -192,15 +190,15 @@ const { el, tiltStyle } = useTilt({ maxTilt: 4, perspective: 1000 })
 
 .trailing-arrow {
   display: inline-block;
-  color: var(--accent);
-  opacity: 0.7;
+  color: var(--accent-interactive);
+  opacity: 0.75;
   font-size: 1.15rem;
   transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
 }
 
 @media (hover: hover) {
   .project-card:hover .project-title {
-    color: var(--accent);
+    color: var(--accent-interactive);
   }
   .project-card:hover .trailing-arrow {
     transform: translate(3px, -3px);

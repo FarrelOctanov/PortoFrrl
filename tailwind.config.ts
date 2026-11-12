@@ -23,9 +23,15 @@ export default <Partial<Config>>{
         card: 'var(--card)',
         'card-subtle': 'var(--card-subtle)',
         accent: 'var(--accent)',
+        'accent-interactive': 'var(--accent-interactive)',
         primary: 'var(--primary)',
         'primary-fg': 'var(--primary-fg)',
-        ring: 'var(--ring)'
+        ring: 'var(--ring)',
+        'surface-highlight': 'var(--surface-highlight)',
+        'blue-light': 'var(--blue-light)',
+        'blue-soft': 'var(--blue-soft)',
+        'blue-primary': 'var(--blue-primary)',
+        'blue-deep': 'var(--blue-deep)'
       },
       fontFamily: {
         sans: ['Quicksand', 'ui-sans-serif', 'system-ui', 'sans-serif']

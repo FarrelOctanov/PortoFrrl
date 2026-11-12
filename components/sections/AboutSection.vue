@@ -26,7 +26,7 @@
               <UserRound :size="18" :stroke-width="1.85" class="text-accent" />
             </span>
             <div class="chip-text">
-              <span class="text-muted text-xs uppercase tracking-wider block">Nama</span>
+              <span class="text-muted text-xs font-medium block">Nama</span>
               <b class="text-fg text-sm md:text-base">{{ profile.name }}</b>
             </div>
           </li>
@@ -35,7 +35,7 @@
               <GraduationCap :size="18" :stroke-width="1.85" class="text-accent" />
             </span>
             <div class="chip-text">
-              <span class="text-muted text-xs uppercase tracking-wider block">Pendidikan</span>
+              <span class="text-muted text-xs font-medium block">Pendidikan</span>
               <b class="text-fg text-sm md:text-base">{{ profile.major }}, {{ profile.school }}</b>
             </div>
           </li>
@@ -44,7 +44,7 @@
               <Compass :size="18" :stroke-width="1.85" class="text-accent" />
             </span>
             <div class="chip-text">
-              <span class="text-muted text-xs uppercase tracking-wider block">Latar Belakang</span>
+              <span class="text-muted text-xs font-medium block">Latar Belakang</span>
               <b class="text-fg text-sm md:text-base">{{ profile.focus }}</b>
             </div>
           </li>
@@ -53,7 +53,7 @@
               <MapPin :size="18" :stroke-width="1.85" class="text-accent" />
             </span>
             <div class="chip-text">
-              <span class="text-muted text-xs uppercase tracking-wider block">Lokasi</span>
+              <span class="text-muted text-xs font-medium block">Lokasi</span>
               <b class="text-fg text-sm md:text-base">{{ profile.location }}</b>
             </div>
           </li>
@@ -62,7 +62,7 @@
               <CalendarDays :size="18" :stroke-width="1.85" class="text-accent" />
             </span>
             <div class="chip-text">
-              <span class="text-muted text-xs uppercase tracking-wider block">Tempat, Tanggal Lahir</span>
+              <span class="text-muted text-xs font-medium block">Tempat, Tanggal Lahir</span>
               <b class="text-fg text-sm md:text-base">{{ profile.birthInfo }}</b>
             </div>
           </li>
@@ -103,7 +103,7 @@
       <div class="mt-14">
         <div class="flex items-center justify-between">
           <h3 class="text-xl font-bold md:text-2xl text-fg">Pengalaman</h3>
-          <span class="text-xs uppercase tracking-wider text-accent font-semibold">Riwayat Praktik &amp; Kerja</span>
+          <span class="text-xs md:text-sm font-semibold text-accent">Riwayat Praktik &amp; Kerja</span>
         </div>
         <div class="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           <article
@@ -132,7 +132,7 @@
       <div class="mt-14">
         <div class="flex items-center justify-between">
           <h3 class="text-xl font-bold md:text-2xl text-fg">Organisasi</h3>
-          <span class="text-xs uppercase tracking-wider text-accent font-semibold">Aktivitas &amp; Kepanitiaan</span>
+          <span class="text-xs md:text-sm font-semibold text-accent">Aktivitas &amp; Kepanitiaan</span>
         </div>
         <div class="mt-5 grid gap-5 md:grid-cols-2">
           <article
@@ -205,11 +205,11 @@ import { education, experience, organizations, profile, softSkills } from '~/dat
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 6px rgba(2, 132, 199, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
 .dark .timeline-node {
-  box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
 }
 
 .node-inner {
@@ -228,7 +228,7 @@ import { education, experience, organizations, profile, softSkills } from '~/dat
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  background: var(--surface-highlight);
   border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   padding: 0.2rem 0.6rem;
   border-radius: 9999px;
@@ -248,7 +248,7 @@ import { education, experience, organizations, profile, softSkills } from '~/dat
 }
 
 .data-chip:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  border-color: color-mix(in srgb, var(--accent-interactive) 40%, var(--border));
   transform: translateY(-1px);
 }
 

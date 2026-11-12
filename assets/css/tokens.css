@@ -1,33 +1,48 @@
 /**
- * Final UI Revision — Modern Neumorphic / Evolved Soft UI Design Tokens.
- * - Light Mode: Soothing off-white base (#f8fafc), professional deep navy headings & text (#0f172a),
- *   soft slate secondary text (#475569), soft sky blue accent (#0284c7 / #38bdf8), clean white surface (#ffffff)
- *   with subtle multi-layer neumorphic shadows.
- * - Dark Mode: Deep navy-black base (#0b0f19), elevated card surface (#111827), subtle border (#1e293b),
- *   crisp off-white text (#f8fafc), muted slate (#94a3b8), light blue accent (#38bdf8).
- * - Kontras (WCAG AA+):
- *   Light: #0f172a di atas #f8fafc (~15.5:1), #475569 di atas #f8fafc (~6.2:1), putih di atas #0284c7 (~4.7:1).
- *   Dark: #f8fafc di atas #0b0f19 (~17:1), #94a3b8 di atas #0b0f19 (~7.5:1), #082f49 di atas #38bdf8 (~8:1).
+ * Blue Color Palette & Design Tokens — Anti-AI Slop Refinement
+ * -------------------------------------------------------------
+ * 1. #E3F2FD (Light Blue)   : Light surface & background highlight
+ * 2. #90CAF9 (Soft Blue)    : Secondary accent & dark mode high-contrast text
+ * 3. #2196F3 (Primary Blue) : Primary accent & interactive CTA elements
+ * 4. #0D47A1 (Deep Blue)    : Strong accent & light mode high-contrast text
+ *
+ * Kontras WCAG AA / AAA:
+ * - Light Mode: #0D47A1 di atas #ffffff (~11.6:1), #0D47A1 di atas #E3F2FD (~9.8:1) [AAA]
+ * - Dark Mode: #90CAF9 di atas #0b0f19 (~10.5:1), #90CAF9 di atas #111827 (~9.4:1) [AAA]
+ * - CTA Button: #ffffff di atas #2196F3 / #1976D2
  */
 :root {
+  /* Primitive Blue Palette */
+  --blue-light: #E3F2FD;
+  --blue-soft: #90CAF9;
+  --blue-primary: #2196F3;
+  --blue-deep: #0D47A1;
+
+  /* Semantic Theme Tokens — Light Mode */
   --bg: #f8fafc;
   --fg: #0f172a;
   --muted: #475569;
   --border: #e2e8f0;
   --card: #ffffff;
-  --card-subtle: #f1f5f9;
-  --accent: #0284c7;
-  --primary: #0284c7;
-  --primary-fg: #ffffff;
-  --ring: #38bdf8;
+  --card-subtle: #f8fafc;
 
-  /* Modern Neumorphic Shadows (Light Mode) */
-  --neu-flat: 4px 4px 12px rgba(15, 23, 42, 0.05), -4px -4px 10px rgba(255, 255, 255, 0.95);
-  --neu-hover: 6px 8px 18px rgba(15, 23, 42, 0.08), -5px -5px 14px rgba(255, 255, 255, 1);
-  --neu-pressed: inset 2px 2px 5px rgba(15, 23, 42, 0.08), inset -2px -2px 5px rgba(255, 255, 255, 0.8);
-  --neu-btn: 3px 3px 10px rgba(15, 23, 42, 0.06), -2px -2px 8px rgba(255, 255, 255, 0.9);
-  --neu-btn-primary: 0 4px 14px rgba(2, 132, 199, 0.35);
-  --neu-btn-primary-hover: 0 6px 20px rgba(2, 132, 199, 0.4);
+  /* Accent & Interactive Hierarchy */
+  --accent: #0D47A1;            /* Deep Blue: Teks aksen, label, eyebrow & icon di light mode */
+  --accent-interactive: #2196F3;/* Primary Blue: Aksen interaktif, link hover & active state */
+  --primary: #2196F3;           /* Primary Blue: Tombol CTA utama */
+  --primary-fg: #ffffff;        /* Teks putih bersih di atas tombol primary */
+  --primary-hover: #1976D2;     /* State hover tombol yang matang */
+  --ring: #2196F3;              /* Focus outline ring */
+  --surface-highlight: #E3F2FD; /* Light Blue: Background badge & highlight selektif */
+  --surface-highlight-fg: #0D47A1;
+
+  /* Clean, Refined Elevation Shadows (Light Mode - Netral Tanpa Neon/Glow) */
+  --neu-flat: 0 1px 3px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.03);
+  --neu-hover: 0 4px 14px rgba(15, 23, 42, 0.07), 0 1px 3px rgba(15, 23, 42, 0.04);
+  --neu-pressed: inset 0 2px 4px rgba(15, 23, 42, 0.06);
+  --neu-btn: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --neu-btn-primary: 0 2px 6px rgba(13, 71, 161, 0.18);
+  --neu-btn-primary-hover: 0 4px 12px rgba(13, 71, 161, 0.28);
 
   --radius: 0.75rem;
   --header-h: 68px;
@@ -35,24 +50,31 @@
 }
 
 .dark {
+  /* Semantic Theme Tokens — Dark Mode */
   --bg: #0b0f19;
   --fg: #f8fafc;
   --muted: #94a3b8;
   --border: #1e293b;
   --card: #111827;
   --card-subtle: #162032;
-  --accent: #38bdf8;
-  --primary: #38bdf8;
-  --primary-fg: #082f49;
-  --ring: #38bdf8;
 
-  /* Modern Neumorphic Shadows (Dark Mode - Surface Elevation & Soft Glow) */
-  --neu-flat: 5px 6px 16px rgba(0, 0, 0, 0.5), -2px -2px 8px rgba(255, 255, 255, 0.025);
-  --neu-hover: 7px 9px 22px rgba(0, 0, 0, 0.65), -3px -3px 10px rgba(255, 255, 255, 0.04);
-  --neu-pressed: inset 2px 2px 5px rgba(0, 0, 0, 0.6), inset -1px -1px 3px rgba(255, 255, 255, 0.03);
-  --neu-btn: 3px 4px 12px rgba(0, 0, 0, 0.45), -1px -1px 6px rgba(255, 255, 255, 0.02);
-  --neu-btn-primary: 0 4px 16px rgba(56, 189, 248, 0.3);
-  --neu-btn-primary-hover: 0 6px 24px rgba(56, 189, 248, 0.42);
+  /* Accent & Interactive Hierarchy */
+  --accent: #90CAF9;            /* Soft Blue: Teks aksen, label, eyebrow & icon di dark mode */
+  --accent-interactive: #2196F3;/* Primary Blue: Aksen interaktif */
+  --primary: #2196F3;           /* Primary Blue: Tombol CTA utama */
+  --primary-fg: #ffffff;
+  --primary-hover: #42A5F5;
+  --ring: #90CAF9;
+  --surface-highlight: rgba(33, 150, 243, 0.12); /* Subtle surface highlight di dark mode */
+  --surface-highlight-fg: #90CAF9;
+
+  /* Clean, Refined Elevation Shadows (Dark Mode - Netral Tanpa Neon/Glow) */
+  --neu-flat: 0 1px 3px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(0, 0, 0, 0.28);
+  --neu-hover: 0 6px 18px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.3);
+  --neu-pressed: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+  --neu-btn: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --neu-btn-primary: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --neu-btn-primary-hover: 0 4px 14px rgba(0, 0, 0, 0.6);
 }
 
 @media (min-width: 1024px) {

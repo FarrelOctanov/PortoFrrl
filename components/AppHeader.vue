@@ -166,7 +166,7 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent) 0%, #38bdf8 100%);
+  background: var(--accent);
   transform-origin: left;
   will-change: transform;
   pointer-events: none;

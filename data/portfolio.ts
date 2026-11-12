@@ -36,6 +36,11 @@ export const profile = {
   major: 'S1 Teknik Informatika'
 }
 
+export const aboutParagraphs: string[] = [
+  'Saya merupakan lulusan S1 Teknik Informatika Universitas Muhammadiyah Jember dengan ketertarikan pada pengembangan teknologi, multimedia, dan pengelolaan sistem informasi. Memiliki pengalaman dalam pengembangan sistem berbasis web, desain grafis, serta pemetaan digital menggunakan Quantum GIS. Saya juga memiliki pengalaman dalam kegiatan operasional, pengelolaan administrasi, dan pelayanan pelanggan yang membentuk kemampuan saya dalam bekerja secara sistematis, teliti, dan bertanggung jawab.',
+  'Saya terbiasa mempelajari hal baru, menganalisis permasalahan, serta menyelesaikan pekerjaan secara mandiri maupun kolaboratif. Dengan kombinasi kemampuan teknis dan pengalaman lintas bidang, saya berkomitmen untuk terus mengembangkan kompetensi serta memberikan kontribusi yang efektif dan sesuai dengan kebutuhan pekerjaan maupun proyek.'
+]
+
 /**
  * Konversi string ke decimal HTML character entities untuk perlindungan terhadap scraper sederhana.
  * Contoh: 'a@b.com' -> '&#97;&#64;&#98;&#46;&#99;&#111;&#109;'

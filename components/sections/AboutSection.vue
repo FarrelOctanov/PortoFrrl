@@ -7,14 +7,8 @@
       <!-- Left: Narrative Bio & Data Diri -->
       <Reveal>
         <div class="space-y-4 text-base leading-relaxed md:text-lg text-muted">
-          <p>
-            Saya <b class="text-fg font-semibold">{{ profile.name }}</b>, {{ profile.role.toLowerCase() }} dengan fokus pada
-            {{ profile.focus.toLowerCase() }}. Saya tertarik pada pengembangan web, machine
-            learning, desain grafis, serta perancangan sistem dan pemetaan digital.
-          </p>
-          <p>
-            Saya terbiasa memecahkan masalah secara sistematis, berpikir analitis, dan bekerja sama
-            dalam tim. Saya adaptif, komunikatif, disiplin, dan memiliki perhatian terhadap detail.
+          <p v-for="(p, pIdx) in aboutParagraphs" :key="pIdx">
+            {{ p }}
           </p>
         </div>
 
@@ -179,7 +173,7 @@ import {
   MapPin,
   UserRound
 } from 'lucide-vue-next'
-import { education, experience, organizations, profile, softSkills } from '~/data/portfolio'
+import { aboutParagraphs, education, experience, organizations, profile, softSkills } from '~/data/portfolio'
 </script>
 
 <style scoped>
